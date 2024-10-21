@@ -1,18 +1,15 @@
 ﻿#include <iostream>
-#include <string>
 using std::cout;
 
-std::string yesOrNo(bool state)
+int reverseNumber(int number, int reversed = 0)
 {
-	return state ? "yes" : "no";
+	if (number == 0)
+		return reversed;
+	return reverseNumber(number / 10, reversed * 10 + number % 10);
 }
 
 int main()
 {
-	/*int number = 3;
-	std::string text = "Launch Git! Like I have never done that LOL. But I have done this ";
-	cout << text << number;*/
-	cout << yesOrNo(0);
-	//Powershell
-	//SJHBFKUg vcahwgevfaycjfgf
+	int number = 63925;
+	cout << reverseNumber(number);
 }
