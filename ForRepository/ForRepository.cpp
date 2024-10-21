@@ -1,9 +1,10 @@
-﻿// ForRepository.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
-#include <iostream>
+﻿#include <iostream>
+#include <string>
+using std::cout;
 
 int main()
 {
-    
+	int number = 3;
+	std::string text = "Launch Git! Like I have never done that LOL. But I have done this ";
+	cout << text << number;
 }
