@@ -14,4 +14,5 @@ int main()
 	cout << text << number;*/
 	cout << yesOrNo(0);
 	//Powershell
+	//SJHBFKUg vcahwgevfaycjfgf
 }
