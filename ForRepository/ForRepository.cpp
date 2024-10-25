@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 using std::cout;
 
+//Reverse number
 int reverseNumber(int number, int reversed = 0)
 {
 	if (number == 0)
