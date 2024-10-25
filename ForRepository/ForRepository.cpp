@@ -1,16 +1,15 @@
 ﻿#include <iostream>
 using std::cout;
 
-//Reverse number
-int reverseNumber(int number, int reversed = 0)
+int fibonacci(int number) 
 {
-	if (number == 0)
-		return reversed;
-	return reverseNumber(number / 10, reversed * 10 + number % 10);
+    if (number == 1) return 0; //Первое число Фибоначчи — 0
+    if (number == 2 || number == 3) return 1; //Второе и третье числа — 1
+    return fibonacci(number - 1) + fibonacci(number - 2); //Возвращаем сумму двух предыдущих чисел Фибоначчи
 }
 
 int main()
 {
-	int number = 63925;
-	cout << reverseNumber(number);
+    int number = 15;
+    cout << fibonacci(number);
 }
