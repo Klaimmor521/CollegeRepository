@@ -1,16 +1,18 @@
 ﻿#include <iostream>
 using std::cout;
 
-//Reverse number
-int reverseNumber(int number, int reversed = 0)
+int ackermann(int m, int n) 
 {
-	if (number == 0)
-		return reversed;
-	return reverseNumber(number / 10, reversed * 10 + number % 10);
+    if (m == 0) //Если m равно 0, возвращаем n + 1
+        return n + 1;
+    if (m > 0 && n == 0) //Если m больше 0 и n равно 0, вызываем ackermann(m - 1, 1)
+        return ackermann(m - 1, 1);
+    return ackermann(m - 1, ackermann(m, n - 1)); //Во всех остальных случаях вызываем ackermann(m - 1, ackermann(m, n - 1))
 }
 
 int main()
 {
-	int number = 63925;
-	cout << reverseNumber(number);
+	int m = 2;
+    int n = 3;
+	cout << ackermann(m, n);
 }
