@@ -1,15 +1,18 @@
 ﻿#include <iostream>
 using std::cout;
 
-int fibonacci(int number) 
+int ackermann(int m, int n) 
 {
-    if (number == 1) return 0; //Первое число Фибоначчи — 0
-    if (number == 2 || number == 3) return 1; //Второе и третье числа — 1
-    return fibonacci(number - 1) + fibonacci(number - 2); //Возвращаем сумму двух предыдущих чисел Фибоначчи
+    if (m == 0) //Если m равно 0, возвращаем n + 1
+        return n + 1;
+    if (m > 0 && n == 0) //Если m больше 0 и n равно 0, вызываем ackermann(m - 1, 1)
+        return ackermann(m - 1, 1);
+    return ackermann(m - 1, ackermann(m, n - 1)); //Во всех остальных случаях вызываем ackermann(m - 1, ackermann(m, n - 1))
 }
 
 int main()
 {
-    int number = 15;
-    cout << fibonacci(number);
+	int m = 2;
+  int n = 3;
+	cout << ackermann(m, n);
 }
