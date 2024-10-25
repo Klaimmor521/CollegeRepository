@@ -13,6 +13,6 @@ int ackermann(int m, int n)
 int main()
 {
 	int m = 2;
-    int n = 3;
+  int n = 3;
 	cout << ackermann(m, n);
 }
